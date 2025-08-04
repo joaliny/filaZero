@@ -9,15 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-  public function up()
+   public function up()
 {
-    Schema::create('hospitais', function (Blueprint $table) {
+    Schema::create('hospitals', function (Blueprint $table) {
         $table->id();
         $table->string('nome');
         $table->string('endereco')->nullable();
         $table->string('telefone')->nullable();
         $table->string('horario')->nullable();
-        $table->string('fonte_api')->nullable(); // URL da API do hospital
+        $table->string('fonte_api')->nullable();
         $table->timestamps();
     });
 }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hospitais');
+        Schema::dropIfExists('hospitals');
     }
 };
